@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <title>삼삼중고나라</title>
+    <script>
+        function getCookie(cookieName){
+            var cookies = document.cookie;
+            var cookieName = cookieName + "=";
+
+            var start_idx_name = cookies.indexOf(cookieName);
+            if (start_idx_name == -1) return"";
+            var start_idx_value = start_idx_name+cookieName.length;
+            var end_idx_value = cookies.indexOf(";", start_idx_value);
+
+            if (end_idx_value == -1) end_idx_value=cookies.length;
+            var cookieValue = cookies.substring(start_idx_value, end_idx_value);
+            return cookieValue;
+        }
+
+        function moveHtml() {
+            var MyCookie = getCookie('MyCookie');
+            if ( MyCookie === ""){
+                alert('로그인 후 이용하시기 바랍니다.');
+                location.href='login.html';
+            }else{
+                location.href='myPage.html';
+            }
+        }
+    </script>
+</head>
+<body>
+<h1>삼삼조 중고나라</h1>
+<br>
+<br>
+<br>
+<h2><input type="button" value="판매하기" onclick="location.href='sell.html'"> </h2>
+<h2><input type="button" value="마이페이지" onclick="moveHtml()
+"></h2>
+</body>
+</html>
