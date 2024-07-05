@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="kor">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <title>삼삼중고나라</title>
@@ -18,8 +18,8 @@
             return cookieValue;
         }
 
-        function moveHtml() {
-            var MyCookie = getCookie('MyCookie');
+        function moveHtml(cookieName) {
+            var MyCookie = getCookie(cookieName);
             if ( MyCookie === ""){
                 alert('로그인 후 이용하시기 바랍니다.');
                 location.href='login.html';
@@ -30,12 +30,15 @@
     </script>
 </head>
 <body>
-<h1>삼삼조 중고나라</h1>
+<h1><?php echo "삼삼조 중고나라"; ?></h1>
 <br>
 <br>
 <br>
-<h2><input type="button" value="판매하기" onclick="location.href='sell.html'"> </h2>
-<h2><input type="button" value="마이페이지" onclick="moveHtml()
-"></h2>
+<input type="button" value="판매하기" onclick="location.href='sell.html'">
+<input type="button" value="마이페이지" onclick="moveHtml('userId')">
+<select name="category">
+<option>카테고리</option>
+    <option>전자기기</option>
+</select>
 </body>
 </html>
